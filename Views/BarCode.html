@@ -1,0 +1,16 @@
+<div>
+<H4>Recherche par code barre</H4>
+<input type="file" accept="image/*" id="PhotoPicker" capture="camera">
+<!-- Taille : {{size}} -->
+<br>
+<!-- OK Fonctionne correctement --> 
+<img  style="display:none" id="myimg" ng-src="{{imgdata}}" /> 
+<img  width="{{width}}" ng-src="{{imgdata}}" />
+<br>
+Le code du code barre extrait est :
+<br><b>{{val}}</b><br>
+
+<a href="#/search//description//EAN/{{val}}" class="btn btn-primary"><i class="icon-search icon-white"></i> Recherche</a>
+
+
+</div>

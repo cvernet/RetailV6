@@ -1,0 +1,12 @@
+ 
+<div id="articles">       
+  <br><br><br><br><br>                                                                
+                                                          
+  <ul class="nav nav-tabs nav-stacked">                                                                                     
+    <li ng-repeat="article in articles | filter:isSearch ">                                                                                                     
+      <a href="#/articles/{{article.id}}/description/{{article.description}}"> {{article.id}} / {{article.description}} </a>                                                                                     
+    </li>                                                                     
+  </ul>                   
+  <br><br><br><br><br><br>
+                                 
+</div>                   

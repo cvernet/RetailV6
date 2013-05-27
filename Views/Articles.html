@@ -1,0 +1,14 @@
+ 
+<div id="articles">       
+                                                                  
+  <form class="form-search">                                                                                     
+    <input type="text" class="input-medium search-query" ng-model="query">                                                                     
+  </form>                                                                                                          
+  <ul class="nav nav-tabs nav-stacked">                                                                                     
+    <li ng-repeat="article in articles | filter:query | filter:isSearch">                                                                                                     
+      <a href="#/articles/{{article.id}}/description/{{article.description}}/EAN/{{article.EAN}}/Mcategory/{{article.Mcategory}}/McategoryT/{{article.McategoryT}}/SalesPrice/{{article.SalesPrice}}/PurchasePrice/{{article.PurchasePrice}}/spcur/{{article.spcur}}/stocks/{{article.stocks}}"> {{article.id}} / {{article.description}} </a>                                                                                     
+    </li>                                                                     
+  </ul>                   
+  <br><br><br><br><br><br>
+                                 
+</div>                   

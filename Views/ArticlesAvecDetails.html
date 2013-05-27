@@ -1,0 +1,108 @@
+ 
+<div id="articles">
+  <form class="form-search">                                                                                     
+    <input type="text" class="input-small search-query" ng-model="query.id" placeholder="id ...">
+    <input type="text" class="input-medium search-query" ng-model="query.ean" placeholder="ean ...">   
+    <br> 
+    <input  type="text" class="input-small search-query" ng-model="query.categoryt" placeholder="categorie ...">
+    <!-- A jouter pour autocomplete auto-complete ui-items="listcategories"-->
+    <input type="text"  class="input-medium search-query" ng-model="query.description" placeholder="description ...">    
+    
+  </form>                                                                                                          
+  <ul class="nav nav-tabs nav-stacked">                                                                                     
+    <li ng-repeat="article in articles | filter:query | filter:isSearch | limitTo:200 ">                                                                                                     
+      <a href="#myModal" data-toggle="modal" ng-click="upd(article.id, article.description, 
+      article.category, article.categoryt, article.ean, article.stocks, article.salesprice, article.purchaseprice,
+      article.spcur)"> 
+      {{article.id}} / {{article.description}}</a>                                                                                     
+    </li>                                                                     
+  </ul>       
+  <br>
+
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Details Article </h3>
+  </div>
+  <div class="modal-body">
+<p>
+  <div class="accordion" id="accordion_detail">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseOne">
+        Généralités
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+    
+     <br>  
+    ID :  {{id}} 
+    <br>
+    Description : {{description}}
+    <br>
+    Categorie : {{Mcategory}} / {{McategoryT}}
+        <br>
+        EAN : {{EAN}}
+       </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseTwo">
+        Suivi des stocks
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        {{stocks}} pièces
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseThree">
+        Détail des prix
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Prix de vente : {{SalesPrice}} {{spcur}}
+  <br> Prix d'achat : {{PurchasePrice}} {{spcur}}        
+  
+      </div>
+    </div>
+  </div>  
+  
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseFour">
+        Code barre EAN
+      </a>
+    </div>
+    <div id="collapseFour" class="accordion-body collapse">
+      <div class="accordion-inner">
+       <a class="btn btn-small btn-primary" onclick="check_input('result', {{EAN}});" href="">Générer code barre</a>
+        <div id="result" class="result"></div>
+        <div id="warning" style="color:red;"></div>  
+      </div>
+    </div>
+  </div>
+  
+</p>
+</div>
+    
+ </div>
+  <div class="modal-footer">
+   <p></td>Quantitée : <input type="texte" ng-model="quantity" class="input-mini"/> <button class="btn btn-primary" ng-click="text='Commande enregistrée'">Commander</button> <br>{{text}}
+   </p>
+    </div>
+</div>
+                              
+</div>
+
+                   

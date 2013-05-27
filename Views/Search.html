@@ -1,0 +1,29 @@
+<div id="search">             
+  <br>  
+  <br>  
+  <br>                                                                      
+  <form class="simple-form">                
+    <table class="table">           
+      <tbody>             
+        <tr>
+          <td>EAN</td>      
+          <td><input type="text" ng-model="search.EAN" class="input-medium"/></td>             
+        </tr>
+        
+        <tr>
+          <td>Id</td>      
+          <td><input type="text" ng-model="search.id" class="input-medium"/></td>             
+        </tr>
+        <tr>      
+        <td>Description</td>      
+        <td><input type="text" ng-model="search.description" class="input-medium"/></td>             
+        </tr>           
+      </tbody>         
+    </table>         
+    <a href="#/search/{{search.id | uppercase}}/description/{{search.description | uppercase}}/EAN/{{search.EAN}}" class="btn btn-large btn-primary"><i class="icon-search icon-white"></i> Recherche</a>                                                                           
+  </form>            
+  <br>
+  <br>
+  <br>
+  <br>                                                                                                                        
+</div>         

@@ -1,0 +1,17 @@
+    <div id="Accueil" class="container">                              
+      <H4>Accueil</H4>      
+      Sélectionner un magasin : <select ng-model="mymagasin" ng-change="save()" ng-options="m.werks as m.name1 for m in magasins"></select>
+      
+        <p>Cette application vous propose les fonctionnalités suivantes :
+        <br>
+        <ul>
+        <li><a href="#/articles">Liste des articles</a></li>
+        <li>Détails des articles : ID, description, catégorie, EAN, stocks, prix</li>
+        </ul>
+        </p> 
+        <p>En version Beta, <a href="#/map" >Plan</a> et <a href="#/barcode" >Code barre</a> ...</p>
+         <p>Le menu vous permet d'accéder aux fonctionnalités.</p>
+                                  
+      
+    </div>
+   

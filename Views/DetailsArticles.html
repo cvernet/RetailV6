@@ -1,0 +1,55 @@
+<div id="articles">       
+  <h3>Détails article <a href="#/articlesOld" class="btn btn-primary">Articles</a></h3> 
+<br>
+    
+  <div class="accordion" id="accordion_detail">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseOne">
+        Généralités
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+      <div class="accordion-inner">
+    ID :  {{id}} /  Description : {{descr}}
+    <br>
+    Categorie : {{Mcategory}} / {{McategoryT}}
+        <br>
+        EAN : {{EAN}} 
+<!--        <a class="btn" onclick="check_input('result', {{EAN}});" href="">Générer code barre</a> -->
+        <div id="result"></div>
+        <div id="warning" style="color:red;"></div>
+       </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseTwo">
+        Suivi des stocks
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        {{stocks}} pièces
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_detail" href="#collapseThree">
+        Détail des prix
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+        Prix de vente : {{SalesPrice}} {{spcur}}
+  <br> Prix d'achat : {{PurchasePrice}} {{spcur}}        
+  
+      </div>
+    </div>
+  </div>  
+</div>
+                                                                                 
+</div>     
